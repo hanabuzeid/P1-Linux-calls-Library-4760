@@ -1,0 +1,21 @@
+This is for the Linux file folder display utility, bt
+
+There is only one C source file for this project, bt.c.  It compiles with a gcc compiler.
+
+How to run bt, a file directory display utility.
+    
+    bt [-h] [-L -d -g -i -p -s -t -u | -l] [dirname]\n\n"
+    
+    -h for help
+    -L to follow symbolic links.
+    -d to show the time of the last modificaton.
+    -g to print the GID associated with the file.
+    -i to print number of links to file in inode table.
+    -p to print permissions.
+    -s to print the file size.
+    -t to print file type information.
+    -u to print the UID associated with the file.
+    -l is equivalent to the options tpiugs.
+
+
+Potential issue. While it does follow symbolic links, it might have a problem with cyclical symbolic links. 
