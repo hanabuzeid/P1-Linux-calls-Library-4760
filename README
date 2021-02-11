@@ -18,4 +18,6 @@ How to run bt, a file directory display utility.
     -l is equivalent to the options tpiugs.
 
 
-Potential issue. While it does follow symbolic links, it might have a problem with cyclical symbolic links. 
+I had fun doing this project, i had difficulties at first because it wouldnt compile on my gcc until i connected to delmar/hoare and 
+made sure it worked there. All the commands print out proper messages and work perfectly fine. However, a potential issue.
+While it does follow symbolic links, it might have a problem with cyclical symbolic links. 
