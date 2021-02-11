@@ -217,7 +217,7 @@ void printNumberOfLinks(const char *path)
        return;
     }   
     
-    printf(" %4lu ", ret.st_nlink);
+    printf(" %4hu ", ret.st_nlink);
 
 }
 
@@ -286,13 +286,14 @@ void searchDirectories(const char *name, int L, int t, int p, int i, int u, int 
         }
         
         if(dir != NULL && visitSimLink){          
-            while(entry = readdir(dir)){
+            while((entry = readdir(dir)) != 0){ // == 
                 if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0)
                     continue;
                 len = snprintf(childPath, sizeof(apath)-1, "%s/%s", apath, entry->d_name);
                 childPath[len] = 0;                
                 enqueue(queue,childPath);                 
-            }           
+            }  
+            closedir(dir); //closedir
         }
     
         
@@ -311,8 +312,8 @@ void searchDirectories(const char *name, int L, int t, int p, int i, int u, int 
         if(d)
             printDate(apath);    
         printf(" %s\n",apath);
+        // printf("a/n")
 
-        closedir(dir);
     }
 
 }
