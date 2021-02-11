@@ -1,4 +1,4 @@
-# Define the object files for your program
+# Define the object files for our program
 OBJECTS := bt.o
 
 # make for the executable
